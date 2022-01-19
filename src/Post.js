@@ -9,16 +9,7 @@ function Post({postId, username, imageUrl, caption}) {
     const [comment, setComment] = useState("")
 
     useEffect(() => {
-        let unsubscribe;
-        if (postId){
-            unsubscribe = db
-                .collection("posts")
-                .doc(postId)
-                .collection("comments")
-                .onSnapshot((snapshot)=> {
-                    setComments(snapshot.docs.map(doc=> doc.data()))
-                })
-        }
+        
     },[postId])
 
     return (
